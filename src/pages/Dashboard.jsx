@@ -1,5 +1,5 @@
 import React from "react"
-import { createBudget, fetchData } from "../helpers"
+import { createBudget, fetchData, waait } from "../helpers"
 import { useLoaderData } from "react-router-dom"
 import Intro from "../components/Intro"
 import { toast } from "react-toastify"
@@ -13,6 +13,7 @@ export const dashboardLoader = () => {
 
 //action
 export async function dashboardAction({ request }) {
+  await waait()
   const data = await request.formData()
   const { _action, ...values } = Object.fromEntries(data)
   if (_action === "newUser") {

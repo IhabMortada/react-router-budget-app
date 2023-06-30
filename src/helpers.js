@@ -1,3 +1,4 @@
+export const waait= ()=> new Promis(res=>setTimeout(res,Math.random()*2000))
 const generateRandomColor = ()=>{
 
   const existingBudgetLength = fetchData("budget")?.length ?? 0 
